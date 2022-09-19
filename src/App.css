@@ -1,0 +1,94 @@
+:root {
+  --text-primary: rgb(20, 20, 20);
+  --text-secondary: rgb(53, 63, 79);
+  --text-tertiary: rgb(100, 116, 139);
+  --text-countdown: rgb(30, 58, 138);
+  --text-notice: rgb(46, 74, 109);
+  --text-notice-icon: rgb(148, 163, 184);
+  --text-highlight: rgb(127, 29, 29);
+  --hover-color: rgb(70, 162, 162);
+  --button-color: rgb(30, 116, 138);
+  --accent-color: rgb(40, 60, 112);
+  --accent-reverse: rgb(255, 255, 255);
+  --reverse-color: rgb(255, 255, 255);
+  --background-main: rgb(255, 255, 255);
+  --background-form: rgb(241, 245, 249);
+  --background-title: rgb(180, 193, 209);
+  --background-countdown: rgba(147, 197, 253, 0.8);
+  --background-notice: rgba(219, 234, 254);
+  --text-inactive: rgb(148, 163, 184);
+  --background-inactive: rgb(226, 232, 240);
+  --background-loading: rgba(219, 234, 254, 0.8);
+  --background-delayed: rgb(253, 249, 233);
+  --background-cancelled: rgb(253, 216, 216);
+  --background-departed: rgb(241 245 249);
+  --border-notice: rgb(179, 173, 163);
+  --background-selected: rgb(230, 250, 251);
+  --focus-color: rgb(34, 112, 185);
+  --train-direct: rgb(240, 155, 36);
+  --nochange: rgb(241, 203, 150);
+}
+
+[data-theme="dark"] {
+  --text-primary: rgb(148, 163, 184);
+  --text-secondary: rgb(19, 23, 29);
+  --text-tertiary: rgb(57, 94, 146);
+  --text-countdown: rgb(92, 136, 255);
+  --text-notice: rgb(112, 135, 176);
+  --text-notice-icon: rgb(70, 78, 89);
+  --text-highlight: rgb(187, 51, 51);
+  --button-color: rgb(18, 119, 119);
+  --hover-color: rgb(4, 86, 86);
+  --accent-color: rgb(0, 0, 0);
+  --accent-reverse: rgb(255, 255, 255);
+  --reverse-color: rgb(143, 165, 174);
+  --background-main: rgb(19, 23, 29);
+  --background-form: rgb(40, 49, 61);
+  --background-title: rgb(70, 83, 100);
+  --background-countdown: rgba(12, 54, 103, 0.8);
+  --background-notice: rgb(50, 76, 108);
+  --text-inactive: rgb(98, 104, 133);
+  --background-inactive: rgb(49, 53, 63);
+  --background-loading: rgba(10, 12, 40, 0.81);
+  --background-delayed: rgb(33, 33, 32);
+  --background-cancelled: rgb(37, 26, 26);
+  --background-departed: rgb(27, 35, 53);
+  --border-notice: rgb(54, 52, 48);
+  --background-selected: rgb(21, 58, 44);
+  --focus-color: rgb(127, 179, 239);
+  --train-direct: rgb(161, 104, 23);
+  --nochange: rgb(73, 62, 46);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  *:focus-visible {
+    outline: 2px solid var(--focus-color);
+  }
+  /* Works on Firefox */
+  * {
+    scrollbar-width: thin;
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+    background: rgba(200, 200, 200, 0.1);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border: 3px solid var(--accent-color);
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}

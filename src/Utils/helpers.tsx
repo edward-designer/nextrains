@@ -1,4 +1,38 @@
-import { TFromTo } from "../Types/types";
+export const formatStations = (stations: TStations) => {
+  const stationsWithValues = stations.filter(Boolean);
+  const stationCount = stationsWithValues.length;
+  switch (stationCount) {
+    case 0:
+      return ["", ""];
+    case 1:
+      return [...stationsWithValues, ""];
+    default:
+      return stationsWithValues;
+  }
+};
+
+export const addAStation = (
+  stations: TStations,
+  index: number,
+  station: string = ""
+): TStations => {
+  const tempStations = [...stations];
+  if (index >= tempStations.length) tempStations.push(station);
+  else {
+    tempStations.splice(index, 0, station);
+  }
+  return tempStations;
+};
+
+export const removeAStation = (
+  stations: TStations,
+  index: number,
+  station: string = ""
+): TStations => {
+  const tempStations = [...stations];
+  tempStations.splice(index, 1);
+  return tempStations;
+};
 
 export const currentTime = () => {
   return new Date().toLocaleTimeString("en-GB", {
@@ -13,27 +47,6 @@ export const currentDayofWeek = () => new Date().getDay();
 export const isNextDay = (time: string) => {
   const [hour] = time.split(":");
   return Number(new Date().getHours()) > parseInt(hour);
-};
-
-export const convertArrToFromToObject = (
-  arr: string[]
-): { returnArr: TFromTo[]; destination: string } => {
-  let returnArr: TFromTo[] = [];
-  let destination = "";
-  const filteredArr = arr.filter(Boolean);
-  const arrCount = filteredArr.length;
-  if (arrCount > 1) {
-    filteredArr.forEach((item: string, ind: number) => {
-      if (ind < arrCount - 1)
-        returnArr.push({ from: item, to: filteredArr[ind + 1] });
-    });
-  } else {
-    returnArr.push({ from: arr[0], to: arr.at(-1) as string });
-  }
-  if (arr.filter(Boolean).length === 3) {
-    destination = arr[2];
-  }
-  return { returnArr, destination };
 };
 
 export const isTime1LaterThanTime2 = (

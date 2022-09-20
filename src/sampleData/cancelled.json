@@ -1,0 +1,1094 @@
+{
+  "trainServices": [
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": null,
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Swansea",
+          "crs": "SWA",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "London Paddington",
+          "crs": "PAD",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": [
+        {
+          "locationName": "Reading",
+          "crs": "RDG",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "rsid": null,
+      "serviceIdPercentEncoded": "yZi1TDPQMACNcKLu5gzcZA%3D%3D",
+      "serviceIdGuid": "4cb598c9-d033-0030-8d70-a2eee60cdc64",
+      "serviceIdUrlSafe": "yZi1TDPQMACNcKLu5gzcZA",
+      "sta": null,
+      "eta": null,
+      "std": "08:20",
+      "etd": null,
+      "platform": null,
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": true,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": "This train has been cancelled because of damage to the overhead electric wires",
+      "delayReason": null,
+      "serviceID": "yZi1TDPQMACNcKLu5gzcZA==",
+      "adhocAlerts": null
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": null,
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Reading",
+          "crs": "RDG",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Bristol Temple Meads",
+          "crs": "BRI",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "6YORn4juMWD8%2FNrn%2Biwn2w%3D%3D",
+      "serviceIdGuid": "9f9183e9-ee88-6031-fcfc-dae7fa2c27db",
+      "serviceIdUrlSafe": "6YORn4juMWD8_Nrn-iwn2w",
+      "sta": null,
+      "eta": null,
+      "std": "08:27",
+      "etd": "Delayed",
+      "platform": "9",
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": false,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": "This train has been cancelled because of damage to the overhead electric wires",
+      "delayReason": "This train has been delayed by damage to the overhead electric wires",
+      "serviceID": "6YORn4juMWD8/Nrn+iwn2w==",
+      "adhocAlerts": null
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Basingstoke",
+              "crs": "BSK",
+              "st": "09:10",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Winchester",
+              "crs": "WIN",
+              "st": "09:26",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Southampton Airport Parkway",
+              "crs": "SOA",
+              "st": "09:34",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Southampton Central",
+              "crs": "SOU",
+              "st": "09:42",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Brockenhurst",
+              "crs": "BCU",
+              "st": "09:58",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Bournemouth",
+              "crs": "BMH",
+              "st": "10:13",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Manchester Piccadilly",
+          "crs": "MAN",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Bournemouth",
+          "crs": "BMH",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": "XC352000",
+      "serviceIdPercentEncoded": "txectWev7IuFWq2LxpIDxg%3D%3D",
+      "serviceIdGuid": "b59c17b7-af67-8bec-855a-ad8bc69203c6",
+      "serviceIdUrlSafe": "txectWev7IuFWq2LxpIDxg",
+      "sta": null,
+      "eta": null,
+      "std": "08:52",
+      "etd": "On time",
+      "platform": "7B",
+      "operator": "CrossCountry",
+      "operatorCode": "XC",
+      "isCircularRoute": false,
+      "isCancelled": false,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": null,
+      "delayReason": null,
+      "serviceID": "txectWev7IuFWq2LxpIDxg==",
+      "adhocAlerts": null
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Didcot Parkway",
+              "crs": "DID",
+              "st": "09:04",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Swindon",
+              "crs": "SWI",
+              "st": "09:29",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Kemble",
+              "crs": "KEM",
+              "st": "09:41",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Stroud",
+              "crs": "STD",
+              "st": "09:57",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Stonehouse",
+              "crs": "SHU",
+              "st": "10:02",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Gloucester",
+              "crs": "GCR",
+              "st": "10:15",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Cheltenham Spa",
+              "crs": "CNM",
+              "st": "10:31",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "London Paddington",
+          "crs": "PAD",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Cheltenham Spa",
+          "crs": "CNM",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": [
+        {
+          "locationName": "Swindon",
+          "crs": "SWI",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "7UkAQNvB4aLm8qJuWVRvRg%3D%3D",
+      "serviceIdGuid": "400049ed-c1db-a2e1-e6f2-a26e59546f46",
+      "serviceIdUrlSafe": "7UkAQNvB4aLm8qJuWVRvRg",
+      "sta": null,
+      "eta": null,
+      "std": "08:53",
+      "etd": "Cancelled",
+      "platform": null,
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": true,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": "This train has been cancelled because of damage to the overhead electric wires",
+      "delayReason": "This train has been delayed by damage to the overhead electric wires",
+      "serviceID": "7UkAQNvB4aLm8qJuWVRvRg==",
+      "adhocAlerts": null
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Tilehurst",
+              "crs": "TLH",
+              "st": "08:57",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Pangbourne",
+              "crs": "PAN",
+              "st": "09:01",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Goring & Streatley",
+              "crs": "GOR",
+              "st": "09:05",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Cholsey",
+              "crs": "CHO",
+              "st": "09:09",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Didcot Parkway",
+              "crs": "DID",
+              "st": "09:21",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Slough",
+          "crs": "SLO",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Didcot Parkway",
+          "crs": "DID",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "c%2FKwbPgnhAUVw%2FM04tQ6bw%3D%3D",
+      "serviceIdGuid": "6cb0f273-27f8-0584-15c3-f334e2d43a6f",
+      "serviceIdUrlSafe": "c_KwbPgnhAUVw_M04tQ6bw",
+      "sta": null,
+      "eta": null,
+      "std": "08:53",
+      "etd": "On time",
+      "platform": "12",
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": false,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": "This train has been cancelled because of damage to the overhead electric wires",
+      "delayReason": "This train has been delayed by damage to the overhead electric wires",
+      "serviceID": "c/KwbPgnhAUVw/M04tQ6bw==",
+      "adhocAlerts": null
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "London Paddington",
+              "crs": "PAD",
+              "st": "09:24",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Plymouth",
+          "crs": "PLY",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "London Paddington",
+          "crs": "PAD",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": [
+        {
+          "locationName": "Reading",
+          "crs": "RDG",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "rsid": null,
+      "serviceIdPercentEncoded": "MmRedOhgLRRDFQbGkUNKhA%3D%3D",
+      "serviceIdGuid": "745e6432-60e8-142d-4315-06c691434a84",
+      "serviceIdUrlSafe": "MmRedOhgLRRDFQbGkUNKhA",
+      "sta": null,
+      "eta": null,
+      "std": "08:56",
+      "etd": null,
+      "platform": null,
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": true,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": "This train has been cancelled because of damage to the overhead electric wires",
+      "delayReason": "This train has been delayed by damage to the overhead electric wires",
+      "serviceID": "MmRedOhgLRRDFQbGkUNKhA==",
+      "adhocAlerts": null
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Didcot Parkway",
+              "crs": "DID",
+              "st": "09:11",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Swindon",
+              "crs": "SWI",
+              "st": "09:26",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Chippenham",
+              "crs": "CPM",
+              "st": "09:39",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Bath Spa",
+              "crs": "BTH",
+              "st": "09:51",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Bristol Temple Meads",
+              "crs": "BRI",
+              "st": "10:05",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Reading",
+          "crs": "RDG",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Bristol Temple Meads",
+          "crs": "BRI",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "l0MAAA7l%2B%2BpgX7CA0z9DHw%3D%3D",
+      "serviceIdGuid": "00004397-e50e-eafb-605f-b080d33f431f",
+      "serviceIdUrlSafe": "l0MAAA7l--pgX7CA0z9DHw",
+      "sta": null,
+      "eta": null,
+      "std": "08:57",
+      "etd": "On time",
+      "platform": "8",
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": false,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": "This train has been cancelled because of damage to the overhead electric wires",
+      "delayReason": "This train has been delayed by damage to the overhead electric wires",
+      "serviceID": "l0MAAA7l++pgX7CA0z9DHw==",
+      "adhocAlerts": null
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Twyford",
+              "crs": "TWY",
+              "st": "09:03",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Maidenhead",
+              "crs": "MAI",
+              "st": "09:10",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Taplow",
+              "crs": "TAP",
+              "st": "09:13",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Burnham",
+              "crs": "BNM",
+              "st": "09:16",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Slough",
+              "crs": "SLO",
+              "st": "09:20",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Langley",
+              "crs": "LNY",
+              "st": "09:23",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Iver",
+              "crs": "IVR",
+              "st": "09:26",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "West Drayton",
+              "crs": "WDT",
+              "st": "09:29",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Hayes & Harlington",
+              "crs": "HAY",
+              "st": "09:33",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Southall",
+              "crs": "STL",
+              "st": "09:37",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Ealing Broadway",
+              "crs": "EAL",
+              "st": "09:44",
+              "et": "Cancelled",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Reading",
+          "crs": "RDG",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Ealing Broadway",
+          "crs": "EAL",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "hUf0kIvrMlzzlNtqM%2F1lNQ%3D%3D",
+      "serviceIdGuid": "90f44785-eb8b-5c32-f394-db6a33fd6535",
+      "serviceIdUrlSafe": "hUf0kIvrMlzzlNtqM_1lNQ",
+      "sta": null,
+      "eta": null,
+      "std": "08:57",
+      "etd": "Cancelled",
+      "platform": null,
+      "operator": "Elizabeth Line",
+      "operatorCode": "XR",
+      "isCircularRoute": false,
+      "isCancelled": true,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": "This train has been cancelled because of damage to the overhead electric wires",
+      "delayReason": null,
+      "serviceID": "hUf0kIvrMlzzlNtqM/1lNQ==",
+      "adhocAlerts": null
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Reading West",
+              "crs": "RDW",
+              "st": "09:02",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Mortimer",
+              "crs": "MOR",
+              "st": "09:12",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Bramley (Hampshire)",
+              "crs": "BMY",
+              "st": "09:18",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Basingstoke",
+              "crs": "BSK",
+              "st": "09:26",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Reading",
+          "crs": "RDG",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Basingstoke",
+          "crs": "BSK",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "xI49D1DjPynIT09u6Ot%2Biw%3D%3D",
+      "serviceIdGuid": "0f3d8ec4-e350-293f-c84f-4f6ee8eb7e8b",
+      "serviceIdUrlSafe": "xI49D1DjPynIT09u6Ot-iw",
+      "sta": null,
+      "eta": null,
+      "std": "08:59",
+      "etd": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": false,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": null,
+      "delayReason": null,
+      "serviceID": "xI49D1DjPynIT09u6Ot+iw==",
+      "adhocAlerts": null
+    }
+  ],
+  "busServices": [
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Heathrow Airport T5 (Bus)",
+              "crs": "HWX",
+              "st": "09:46",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Heathrow Airport T2 (Bus)",
+              "crs": "HWA",
+              "st": "09:58",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Heathrow Airport T3 (Bus)",
+              "crs": "HWE",
+              "st": "10:03",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Heathrow Central Bus Stn",
+              "crs": "HTR",
+              "st": "10:07",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 1,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Reading",
+          "crs": "RDG",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Heathrow Central Bus Stn",
+          "crs": "HTR",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "Osi1Mje7fLgDIZwpqj%2Bw6A%3D%3D",
+      "serviceIdGuid": "32b5c83a-bb37-b87c-0321-9c29aa3fb0e8",
+      "serviceIdUrlSafe": "Osi1Mje7fLgDIZwpqj-w6A",
+      "sta": null,
+      "eta": null,
+      "std": "08:55",
+      "etd": "On time",
+      "platform": "BUS",
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": false,
+      "filterLocationCancelled": false,
+      "serviceType": 1,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": null,
+      "delayReason": null,
+      "serviceID": "Osi1Mje7fLgDIZwpqj+w6A==",
+      "adhocAlerts": null
+    }
+  ],
+  "ferryServices": null,
+  "generatedAt": "2022-09-20T07:53:02.2838055+00:00",
+  "locationName": "Reading",
+  "crs": "RDG",
+  "filterLocationName": null,
+  "filtercrs": null,
+  "filterType": 0,
+  "nrccMessages": [
+    {
+      "value": "Major disruption between London Paddington and Heathrow terminals / Reading due to damage to the overhead wires. More details can be found in <a href=\"//nationalrail.co.uk/service_disruptions/306199.aspx\">Latest Travel News</a>"
+    }
+  ],
+  "platformAvailable": true,
+  "areServicesAvailable": true
+}

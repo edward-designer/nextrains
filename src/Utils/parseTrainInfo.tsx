@@ -1,4 +1,4 @@
-import { TTrainInfo, TrainStatus, TParsedTrainInfo } from "../Types/types";
+import { TTrainInfo, TrainStatus, TParsedTrainInfo } from "../types/types";
 
 import { isTimeFormat, isTime1LaterThanTime2, currentTime } from "./helpers";
 

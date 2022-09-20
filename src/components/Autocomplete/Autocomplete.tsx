@@ -3,12 +3,12 @@ import React from "react";
 import AutocompleteField from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 
-import useTrainStationsList from "../../Hooks/useTrainStationsList";
+import useTrainStationsList from "../../hooks/useTrainStationsList";
 
-import { Label } from "../../Types/types";
+import { StationsLabel } from "../../types/customTypes";
 
 type TAutocompleteProps = {
-  label: Label;
+  label: StationsLabel;
   changeHandler: (order: number, value: string) => void;
   value: [number, string];
 };
@@ -17,7 +17,7 @@ const Autocomplete = ({ label, changeHandler, value }: TAutocompleteProps) => {
   const [stationList] = useTrainStationsList();
 
   return (
-    <div className="my-2">
+    <div className="flex-1">
       <AutocompleteField
         id={label}
         options={stationList}

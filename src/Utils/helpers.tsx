@@ -34,6 +34,18 @@ export const removeAStation = (
   return tempStations;
 };
 
+export const parseStationsIntoRoutes = (stations: TStations) => {
+  const formattedStations = formatStations(stations);
+  let parsedRouteArr = [];
+  for (let i = 0; i < formattedStations.length - 1; i++) {
+    parsedRouteArr.push({
+      from: formattedStations[i],
+      to: formattedStations[i + 1],
+    });
+  }
+  return parsedRouteArr;
+};
+
 export const currentTime = () => {
   return new Date().toLocaleTimeString("en-GB", {
     timeZone: "Europe/London",
@@ -130,4 +142,29 @@ export const checkParams = (param: string | undefined) => {
   if (!param) return "";
   const match = param.match(/[A-Z]{3}/);
   return match ? match[0] : "";
+};
+
+export const replacer = (key: string | number, value: unknown) => {
+  if (value instanceof Map) {
+    return {
+      dataType: "Map",
+      value: [...value],
+    };
+  } else {
+    return value;
+  }
+};
+
+type TStringifiedMap = {
+  dataType: string;
+  value: [string, string][];
+};
+
+export const reviver = (key: string | number, value: TStringifiedMap) => {
+  if (typeof value === "object" && value !== null) {
+    if (value.dataType === "Map") {
+      return new Map(value.value);
+    }
+  }
+  return value;
 };

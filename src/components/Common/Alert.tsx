@@ -5,11 +5,17 @@ import Button from "./Button";
 
 type PropsType = {
   message: string;
+  showAlert: boolean;
   setShowAlert: React.Dispatch<React.SetStateAction<boolean>>;
   type?: "Error" | "Notice";
 };
 
-const Alert = ({ message, setShowAlert, type = "Error" }: PropsType) => {
+const Alert = ({
+  message,
+  showAlert,
+  setShowAlert,
+  type = "Error",
+}: PropsType) => {
   useEffect(() => {
     let timeOutId: ReturnType<typeof setTimeout>;
     if (type === "Error") {
@@ -18,6 +24,8 @@ const Alert = ({ message, setShowAlert, type = "Error" }: PropsType) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  if (!message || !showAlert) return null;
 
   return (
     <div

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 
 import Button from "../Common/Button";
 
@@ -6,10 +6,9 @@ import { ControlContext } from "../../contexts/ControlContext";
 import { FavContext } from "../../contexts/FavContext";
 
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
-import BookmarkAddedIcon from "@mui/icons-material/BookmarkAdded";
-import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import FavList from "../FavList/FavList";
+import FavButton from "./FavButton";
+import ShowFavsButton from "./ShowFavsButton";
 
 const OtherControls = () => {
   const { stations, setStations } = useContext(ControlContext);
@@ -23,7 +22,7 @@ const OtherControls = () => {
     });
   };
 
-  const ShowFavsListHandler = () => {
+  const showFavsListHandler = () => {
     setShowFavsList((showFavsList) => !showFavsList);
   };
 
@@ -45,39 +44,17 @@ const OtherControls = () => {
               <SwapHorizIcon />
             </Button>
 
-            {isFav(stations) ? (
-              <Button
-                clickHandler={() => {}}
-                ariaLabel="Already added"
-                customStyle="bg-transparent text-text-inactive cursor-default"
-                label="Saved"
-              >
-                <BookmarkAddedIcon />
-              </Button>
-            ) : (
-              <Button
-                clickHandler={addFavHandler(stations)}
-                ariaLabel="Add to favorites"
-                customStyle="bg-transparent text-button-color"
-                label="Add to Saved"
-              >
-                <BookmarkAddIcon />
-              </Button>
-            )}
+            <FavButton
+              hasAddedToFav={isFav(stations)}
+              addToFavHandler={addFavHandler(stations)}
+            />
           </div>
 
-          {favs.length > 0 && (
-            <Button
-              clickHandler={ShowFavsListHandler}
-              ariaLabel="Show saved routes"
-              customStyle={`bg-transparent ${
-                showFavsList ? "text-text-inactive" : "text-text-notice"
-              }`}
-              label="Saved Routes"
-            >
-              <BookmarksIcon />
-            </Button>
-          )}
+          <ShowFavsButton
+            favs={favs}
+            showFavsListHandler={showFavsListHandler}
+            showFavsList={showFavsList}
+          />
         </div>
       </div>
       <FavList />

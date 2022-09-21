@@ -1,5 +1,10 @@
 type TStations = string[];
 
+interface TFromTo {
+  from: string;
+  to: string;
+}
+
 type TTrainInfo = {
   isCancelled: boolean;
   isDelayed: boolean;

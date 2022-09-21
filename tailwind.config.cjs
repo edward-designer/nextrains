@@ -45,6 +45,15 @@ module.exports = {
         "train-direct": "var(--train-direct)",
         "background-nochange": "var(--nochange)",
       },
+      animation: {
+        "spin-anticlockwise": "spinAnticlockwise 1s ease-in-out infinite",
+      },
+      keyframes: {
+        spinAnticlockwise: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(-360deg)" },
+        },
+      },
     },
   },
   plugins: [],

@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Draggable } from "react-beautiful-dnd";
-
-import { ControlContext } from "../../contexts/ControlContext";
 
 import Button from "../Common/Button";
 
@@ -13,7 +11,11 @@ type TFavListItem = {
   id: string;
   fav: TStations;
   removeFav: (order: number) => void;
+  showFavsList: boolean;
   setShowFavsList: React.Dispatch<React.SetStateAction<boolean>>;
+  setStations: (
+    station: TStations | ((station: TStations) => TStations)
+  ) => void;
 };
 
 const FavListItem = ({
@@ -21,12 +23,15 @@ const FavListItem = ({
   id,
   ind,
   removeFav,
+  showFavsList,
   setShowFavsList,
+  setStations,
 }: TFavListItem) => {
-  const { setStations } = useContext(ControlContext);
   const setAsRoute = (fav: TStations) => {
     setStations(fav);
   };
+
+  if (!showFavsList) return null;
 
   return (
     <Draggable draggableId={id} index={ind}>
@@ -48,6 +53,7 @@ const FavListItem = ({
           >
             {fav.filter(Boolean).join(" → ")}
           </span>
+
           <Button
             customStyle="text-text-inactive hover:text-button-color bg-background-main"
             clickHandler={() => removeFav(ind)}

@@ -1,6 +1,6 @@
-import { TTrainInfo, TrainStatus, TParsedTrainInfo } from "../types/types";
-
 import { isTimeFormat, isTime1LaterThanTime2, currentTime } from "./helpers";
+
+import { TrainStatus } from "../types/customTypes";
 
 export const getTrainStatus = (
   train: TTrainInfo,
@@ -11,10 +11,10 @@ export const getTrainStatus = (
     status = isTimeFormat(train.etd)
       ? TrainStatus.delayedWithNewArrivalTime
       : TrainStatus.delayed;
-  if (train.isCancelled || train.cancelReason) status = TrainStatus.cancelled;
   arrivalTime &&
     isTime1LaterThanTime2(currentTime(), arrivalTime) &&
     (status = TrainStatus.departed);
+  if (train.isCancelled || train.cancelReason) status = TrainStatus.cancelled;
   return status;
 };
 
@@ -58,21 +58,27 @@ const parseTrainInfo = (
     TrainStatus.delayedWithNewArrivalTime,
   ];
   const isRunning = runningStatus.includes(status);
-  const callingPoint = subsequentCallingPoints[0].callingPoint;
-  callingPoint.unshift({
-    locationName: from || "",
-    crs: "FROM",
-    st: std,
-    et: etd,
-  });
+  const callingPoint = Array.isArray(subsequentCallingPoints)
+    ? subsequentCallingPoints[0].callingPoint
+    : [];
+  if (callingPoint.length !== 0) {
+    callingPoint.unshift({
+      locationName: from || "",
+      crs: "FROM",
+      st: std,
+      et: etd,
+    });
+  }
   const destinationStationInfo = callingPoint.filter(
     (station) => station.crs === to
   )[0];
   const arrivalTimeDestination = isTimeFormat(destinationStationInfo?.et)
     ? destinationStationInfo?.et
     : destinationStationInfo?.st || null;
-  const endStation = destination[0].locationName;
-  const endStationCRS = destination[0].crs;
+  const endStation = Array.isArray(destination)
+    ? destination[0]?.locationName
+    : "";
+  const endStationCRS = Array.isArray(destination) ? destination[0]?.crs : "";
   const reason = cancelReason || delayReason || null;
   const hasToilet = findToilets(formation);
   const fastest = false;
@@ -84,9 +90,12 @@ const parseTrainInfo = (
     );
   }
   if (isDirect) {
-    const arrivalFinalDestination = callingPoint.filter(
-      (station) => station.crs === destinationStation
-    )[0];
+    const arrivalFinalDestination =
+      callingPoint.length === 0
+        ? { et: "", st: "" }
+        : callingPoint.filter(
+            (station) => station.crs === destinationStation
+          )[0];
     arrivalTimeFinalDestination = isTimeFormat(arrivalFinalDestination.et)
       ? arrivalFinalDestination.et
       : arrivalFinalDestination.st || "";

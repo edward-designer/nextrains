@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import TrainListPane from "../TrainList/TrainListPane";
+import Journey from "./Journey";
 
 import { ControlContext } from "../../contexts/ControlContext";
 import SelectedTrainContextWrapper from "../../contexts/SelectedTrainContext";
@@ -15,12 +15,14 @@ const Journeys = () => {
     <SelectedTrainContextWrapper>
       <div className="flex flex-wrap flex-row gap-2">
         {routesArray.map((route, ind) => (
-          <section
-            className="mt-1 basis-full md:basis-[calc((100%-8px)/2)] md:items-start md:gap-3"
+          <Journey
             key={Object.values(route).join("")}
-          >
-            <TrainListPane leg={ind + 1} fromTo={route} />
-          </section>
+            leg={ind + 1}
+            fromTo={route}
+            finalDestination={
+              ind !== routesArray.length - 1 ? stations.at(-1) || "" : ""
+            }
+          />
         ))}
       </div>
     </SelectedTrainContextWrapper>

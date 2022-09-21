@@ -46,6 +46,7 @@ const parseTrainInfo = (
     formation,
     destinationPlatform,
   } = train;
+  
   const arrivalTime =
     etd === "Cancelled" || etd === "Delayed"
       ? null
@@ -72,7 +73,7 @@ const parseTrainInfo = (
   const destinationStationInfo = callingPoint.filter(
     (station) => station.crs === to
   )[0];
-  const arrivalTimeDestination = isTimeFormat(destinationStationInfo?.et)
+  const toStationArrivalTime = isTimeFormat(destinationStationInfo?.et)
     ? destinationStationInfo?.et
     : destinationStationInfo?.st || null;
   const endStation = Array.isArray(destination)
@@ -100,6 +101,8 @@ const parseTrainInfo = (
       ? arrivalFinalDestination.et
       : arrivalFinalDestination.st || "";
   }
+  const toStationPlatform = destinationPlatform;
+  const toStation = to;
 
   const formattedTrainInfo = {
     serviceIdUrlSafe,
@@ -111,13 +114,14 @@ const parseTrainInfo = (
     platform,
     callingPoint,
     arrivalTime,
-    arrivalTimeDestination,
-    arrivalTimeFinalDestination,
     reason,
     hasToilet,
     fastest,
     isDirect,
-    destinationPlatform,
+    toStation,
+    toStationPlatform,
+    toStationArrivalTime,
+    arrivalTimeFinalDestination,
   };
   return formattedTrainInfo;
 };

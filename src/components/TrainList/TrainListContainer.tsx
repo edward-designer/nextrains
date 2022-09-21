@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 
-import TrainRowContainer from "./TrainRowContainer";
-import Loading from "../Common/Loading";
+import TrainListContainerView from "./TrainListContainerView";
 
 import { SelectedTrainContext } from "../../contexts/SelectedTrainContext";
 import { TrainInfoContext } from "../../contexts/TrainInfoContext";
@@ -13,24 +12,22 @@ const TrainListContainer = () => {
     fromTo,
     leg,
     earliestTimeForConnectingTrain,
+    finalDestination,
     response,
     loading,
     refetch,
   } = useContext(TrainInfoContext);
   const selected = useContext(SelectedTrainContext);
-  const previousLegSelectedTrain = selected.selectedTrains.has(leg - 1)
-    ? selected.selectedTrains.get(leg - 1)
+  const currentLegSelectedTrain = selected.selectedTrains.has(leg)
+    ? selected.selectedTrains.get(leg)
     : null;
-
-  const fromTime = previousLegSelectedTrain
-    ? previousLegSelectedTrain?.arrivalTime
-    : null;
+  const fromTime = currentLegSelectedTrain?.arrivalTime || null;
 
   // refresh when tab becomes active/visible
   useEffect(() => {
     const document = window.document;
     const reloadWhenActive = () => {
-      if (!document.hidden && !previousLegSelectedTrain) {
+      if (!document.hidden && !currentLegSelectedTrain) {
         refetch(earliestTimeForConnectingTrain);
       }
     };
@@ -38,58 +35,37 @@ const TrainListContainer = () => {
     return () =>
       document.removeEventListener("visibilitychange", reloadWhenActive);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [previousLegSelectedTrain, earliestTimeForConnectingTrain]);
+  }, [currentLegSelectedTrain, earliestTimeForConnectingTrain]);
 
   // auto refresh every 60 seconds
   useEffect(() => {
     const timer = window.setInterval(
       () =>
-        (!previousLegSelectedTrain ||
-          isTime1LaterThanTime2(fromTime, currentTime())) &&
-        refetch(earliestTimeForConnectingTrain),
+        // to retain the info for seleted trains that has departed
+        !(
+          currentLegSelectedTrain &&
+          isTime1LaterThanTime2(currentTime(), fromTime)
+        ) && refetch(earliestTimeForConnectingTrain),
       60000
     );
     return () => window.clearInterval(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [previousLegSelectedTrain, earliestTimeForConnectingTrain]);
+  }, [earliestTimeForConnectingTrain, fromTime]);
 
-  if (!fromTo.from)
-    // NO from station is entered
-    return (
-      <div className="p-4 text-text-inactive text-xs">
-        Please begin by entering the departure station in the 'from' field.
-      </div>
-    );
-
-  // NO data return
-  if (!response)
-    return (
-      <div className="p-4 text-text-inactive text-xs">
-        Sorry, no direct trains between the two stations are found.
-      </div>
-    );
-
-  const trainList = response;
+  // refresh if previousLegSelectedTrain is changed
+  useEffect(
+    () => refetch(earliestTimeForConnectingTrain),
+    [earliestTimeForConnectingTrain, refetch]
+  );
 
   return (
-    <div className="relative">
-      {loading && <Loading />}
-      <>
-        {trainList &&
-          trainList.map((trainDetails) => (
-            <TrainRowContainer
-              key={trainDetails.serviceIdUrlSafe}
-              trainDetails={trainDetails}
-            />
-          ))}
-        {trainList.length === 0 && (
-          <div className="p-4 text-text-inactive text-xs">
-            Sorry, no trains are found currently. Check back later to look for
-            available trains.
-          </div>
-        )}
-      </>
-    </div>
+    <TrainListContainerView
+      trainList={response}
+      fromTo={fromTo}
+      leg={leg}
+      loading={loading}
+      finalDestination={finalDestination}
+    />
   );
 };
 

@@ -51,18 +51,18 @@ const useTrainInfo = (
                 (train: TParsedTrainInfo) => train.isRunning
               );
               let fastestArrivalTime =
-                runningTrainServices.arrivalTimeDestination;
+                runningTrainServices.toStationArrivalTime;
               let fastestArrivalTrain = 0;
               for (let i = 0; i < trainServices.length; i++) {
                 if (
                   isTime1LaterThanTime2(
                     fastestArrivalTime,
-                    trainServices[i].arrivalTimeDestination
+                    trainServices[i].toStationArrivalTime
                   ) ||
                   !fastestArrivalTime ||
                   !trainServices[fastestArrivalTrain].isRunning
                 ) {
-                  fastestArrivalTime = trainServices[i].arrivalTimeDestination;
+                  fastestArrivalTime = trainServices[i].toStationArrivalTime;
                   fastestArrivalTrain = i;
                 }
               }

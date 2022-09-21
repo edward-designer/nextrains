@@ -27,17 +27,18 @@ const ControlContextWrapper = ({ children }: { children: ReactNode }) => {
     [from, change1, change2, change3, change4, to].filter(Boolean) as TStations
   );
   const [stations, setStations] = useState<TStations>(stationsFromURL);
-
   useEffect(() => {
-    if (stations.length > 0) {
+    if (formatStations(stations).length > 0) {
       const newURL = stations.filter(Boolean).join("/");
       const newTitle = stations.filter(Boolean).join("→");
+      // right now can only replace the URL but cannnot "go back"
       window.history.replaceState(null, newTitle, `/${newURL}`);
     }
   }, [stations]);
 
   const controlValues = useMemo(
     () => ({ stations, setStations }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [JSON.stringify(stations)]
   );
 

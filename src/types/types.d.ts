@@ -48,19 +48,19 @@ type TParsedTrainInfo = {
     st: string;
     et: string;
   }[];
-  arrivalTimeDestination: string | null;
+  toStationArrivalTime: string | null;
   arrivalTimeFinalDestination: string;
   reason: string | null;
   hasToilet: boolean;
   fastest: boolean;
   isDirect: boolean;
-  destinationPlatform: string;
+  toStation: string | null;
+  toStationPlatform: string;
 };
 
-enum TrainStatus {
-  "ontime" = "On Time",
-  "departed" = "On Time and Departed",
-  "delayedWithNewArrivalTime" = "Delayed with a new Arrival Time Set",
-  "delayed" = "Delayed",
-  "cancelled" = "Cancelled",
-}
+type TStation = {
+  locationName: string;
+  crs: string;
+  st: string;
+  et: string;
+};

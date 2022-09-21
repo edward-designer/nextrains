@@ -10,7 +10,7 @@ type TCellPlatformTimerContainer = {
   isConnecting: boolean;
   toPlatform: string;
   changeTime: string | null;
-  departureDateObj: Date | undefined;
+  arrivalTime: string | null;
   isRunning: boolean;
 };
 const CellPlatformTimerContainer = ({
@@ -19,7 +19,7 @@ const CellPlatformTimerContainer = ({
   isConnecting,
   toPlatform,
   changeTime,
-  departureDateObj,
+  arrivalTime,
   isRunning,
 }: TCellPlatformTimerContainer) => {
   const isDirect = platform === toPlatform;
@@ -51,10 +51,7 @@ const CellPlatformTimerContainer = ({
       ) : (
         <>
           <CellPlatform status={status} platform={platform} />
-          <CellCountDown
-            departureDateObj={departureDateObj}
-            isRunning={isRunning}
-          />
+          <CellCountDown arrivalTime={arrivalTime} isRunning={isRunning} />
         </>
       )}
     </div>

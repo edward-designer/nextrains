@@ -1,7 +1,8 @@
 import React from "react";
 
 import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
-import { TrainStatus } from "../../Types/types";
+
+import { TrainStatus } from "../../types/customTypes";
 
 type TCellPlatform = {
   platform?: string | null;

@@ -6,6 +6,7 @@ interface TTrainInfoContext {
   fromTo: TFromTo;
   leg: number;
   earliestTimeForConnectingTrain: string | null;
+  finalDestination: string;
   response: TParsedTrainInfo[];
   error: string;
   notice: { value: string }[];
@@ -17,6 +18,7 @@ export const TrainInfoContext = createContext<TTrainInfoContext>({
   fromTo: { from: "", to: "" },
   leg: -1,
   earliestTimeForConnectingTrain: null,
+  finalDestination: "",
   response: [],
   error: "",
   notice: [],
@@ -28,22 +30,26 @@ interface TTrainInfoContextWrapper {
   fromTo: TFromTo;
   leg: number;
   earliestTimeForConnectingTrain: string | null;
+  finalDestination?: string;
   children: React.ReactNode;
 }
 const TrainInfoContextWrapper = ({
   fromTo,
   leg,
   earliestTimeForConnectingTrain,
+  finalDestination = "",
   children,
 }: TTrainInfoContextWrapper) => {
   const { response, error, notice, loading, refetch } = useTrainInfo(
     fromTo,
-    earliestTimeForConnectingTrain
+    earliestTimeForConnectingTrain,
+    finalDestination
   );
 
   const value = {
     fromTo,
     leg,
+    finalDestination,
     earliestTimeForConnectingTrain,
     response,
     error,

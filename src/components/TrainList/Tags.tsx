@@ -1,11 +1,11 @@
 import React from "react";
 
-type TRowTag = {
+type TTag = {
   children: React.ReactNode;
   className: string;
 };
 
-const RowTag = ({ children, className }: TRowTag) => {
+const Tag = ({ children, className }: TTag) => {
   return (
     <span
       className={`inline-block text-xs w-16 h-[20px] relative text-reverse-color pl-4 py-[3px] ${className} 
@@ -17,4 +17,4 @@ const RowTag = ({ children, className }: TRowTag) => {
   );
 };
 
-export default RowTag;
+export default Tag;

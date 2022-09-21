@@ -12,7 +12,9 @@ import TrainIcon from "@mui/icons-material/Train";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 
 const TrainListTitleBar = () => {
-  const Selected = useContext(SelectedTrainContext);
+  const [showAlert, setShowAlert] = useState<boolean>(false);
+
+  const SelectedTrains = useContext(SelectedTrainContext);
   const {
     fromTo,
     leg,
@@ -23,9 +25,8 @@ const TrainListTitleBar = () => {
     refetch,
   } = useContext(TrainInfoContext);
 
-  const trainSelected = Selected.selectedTrains.has(leg);
+  const trainSelected = SelectedTrains.selectedTrains.has(leg);
 
-  const [showAlert, setShowAlert] = useState<boolean>(false);
   const toggleAlert = () => {
     setShowAlert((showAlert) => !showAlert);
   };

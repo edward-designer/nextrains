@@ -125,6 +125,11 @@ export const minutesFromNow = (time: string): number => {
   return result ? (result >= 120 ? 119 : result) : 0;
 };
 
+export const countDownTimer = (time: string): string => {
+  const result = minutesDifferenceNumber(currentTime(), time);
+  return result === 0 ? "due" : result > 60 ? ">1hr" : `${result}m`;
+};
+
 export const checkPeakHours = (fromStation: string | null): boolean => {
   const londonStations = ["PAD", "KGX", "WAT", "VIC"];
   const time = currentTime();

@@ -5,7 +5,7 @@
   "main": "api.js",
   "scripts": {
     "start": "NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/netlify-lambda serve src",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/netlify-lambda build src"
+    "build": "./node_modules/.bin/netlify-lambda build src"
   },
   "author": "",
   "license": "ISC",

@@ -27,7 +27,7 @@ const useTrainInfo = (
         const timeOffset = time + 1;
         const http = import.meta.env.DEV
           ? "http://localhost:3001"
-          : "https://nextrains.herokuapp.com";
+          : "https://nextrains.netlify.app/.netlify/functions";
         const trainApi = `${http}/api/${from}/to/${apiTo}/${timeOffset}`;
         axios
           .get(trainApi)

@@ -30,7 +30,11 @@ const Journey = ({ leg, fromTo, finalDestination }: TJourney) => {
         earliestTimeForConnectingTrain={earliestTimeForConnectingTrain}
         finalDestination={finalDestination}
       >
-        <section className="shadow-md mt-1 basis-full md:basis-[calc((100%-8px)/2)] md:items-start md:gap-3">
+        <section
+          className={`shadow-md mt-1 basis-full md:basis-[calc((100%-8px)/2)] md:items-start md:gap-3 ${
+            leg === 1 ? "flex-1" : ""
+          }   `}
+        >
           <TrainListTitleBar />
           <TrainListContainer />
         </section>

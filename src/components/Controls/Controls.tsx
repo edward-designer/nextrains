@@ -10,7 +10,7 @@ import { ControlContext } from "../../contexts/ControlContext";
 
 import { StationsLabel } from "../../types/customTypes";
 
-import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
+import FromStationField from "./FromStationField";
 
 const Controls = () => {
   const { stations, setStations } = useContext(ControlContext);
@@ -26,18 +26,13 @@ const Controls = () => {
 
   return (
     <ErrorBoundary>
-      <div className="flex flex-row flex-wrap">
+      <div className="flex flex-row flex-wrap relative">
         <div className="flex flex-1 flex-row flex-wrap bg-background-form pr-0 shadow-md  min-h-[120px]">
           <div className="flex-1 flex flex-col p-3 shadow-black md:flex-wrap md:flex-row md:items-center md:justify-center md:gap-2">
-            <StationInput
+            <FromStationField
               label={StationsLabel.from}
               value={[0, stations[0]]}
               setStationsHandler={setStationsHandler}
-              arrow={
-                <DoubleArrowIcon
-                  sx={{ fontSize: "small", color: "var(--text-tertiary)" }}
-                />
-              }
             />
 
             <InterchangeControl setStationsHandler={setStationsHandler} />

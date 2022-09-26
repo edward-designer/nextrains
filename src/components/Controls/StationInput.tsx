@@ -20,7 +20,7 @@ const StationInput = ({
   arrow,
 }: TStationInput) => (
   <>
-    <div className="flex items-center my-2 md:basis-1/4">
+    <div className="flex items-center my-2 md:basis-1/4 relative">
       <Autocomplete
         label={label}
         changeHandler={setStationsHandler}

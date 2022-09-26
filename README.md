@@ -23,6 +23,7 @@ I find catching and changing trains in UK is quite a daunting task as trains are
   - train routes can be saved for fast retrieval
   - drag and drop to reorder the saved list (new routes will be added to the top by default)
 - Real-time notices for delay/cancellation are shown whenever available
+- [NEW] Use geolocation API to get the nearest train station
 - Localstorage to store saved routes
 - A reverse button for fast retrieving return information
 - Light/Dark theme
@@ -34,14 +35,14 @@ This is a complete rewrite of the previous version[https://github.com/edward-des
 - Separation of presentation (pure functional components) and logic whenever possible
 - Enhance the performance of the app by eliminating unnecessary re-rendering through composition, sparation of context and memoisation
 - Use Context to reduce props drilling
-- Unit, integration (Vitest, React Testing Library, Jest) and E2E (Cypress) testing 
+- Unit, integration (Vitest, React Testing Library, Jest) and E2E (Cypress) testing
 - Runs on Vite for a much faster development performance
 - Deployed to Netlify which makes use of Lambda functions for backend service
 - Replaced the React TimeAgo library with custom functions
 
 ## Todo
 
-- Suggest nearest stations through Geolocation API
+- ~~Suggest nearest stations through Geolocation API~~
 
 ## Tech Stacks
 
@@ -72,3 +73,4 @@ A simple node server is created to retrieve information from the source API by s
 ## Data Source
 
 - UK trains real-time arrival and departure info is provided by [National Rail Enquiries](https://www.nationalrail.co.uk/100296.aspx)
+- UK train station data is provided by uk-railway-stations and Trainline EU and original sources.

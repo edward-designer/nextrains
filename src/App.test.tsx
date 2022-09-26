@@ -1,18 +1,40 @@
 import React from "react";
-import { render, screen, fireEvent, cleanup } from "@testing-library/react";
+import {
+  render,
+  screen,
+  fireEvent,
+  cleanup,
+  waitFor,
+  act,
+} from "@testing-library/react";
 import { describe, expect, it, beforeEach, afterEach } from "vitest";
 
 import App from "./App";
 
 beforeEach(() => {
   vi.resetModules();
+  render(<App />);
 });
 
 afterEach(cleanup);
 
 describe("App Component", () => {
+  const mockGeolocation = {
+    getCurrentPosition: vi.fn().mockImplementation((success) =>
+      Promise.resolve(
+        success({
+          coords: {
+            latitude: 51.3950604,
+            longitude: -1.2519843,
+          },
+        })
+      )
+    ),
+  };
+  // @ts-ignore
+  navigator.geolocation = mockGeolocation;
+
   it("should render the welcome message", async () => {
-    render(<App />);
     const welcomeMsg = await screen.findByText(
       `Please begin by entering the departure station in the 'from' field.`
     );
@@ -20,7 +42,6 @@ describe("App Component", () => {
   });
 
   it("should render the train info view when the 'from' field is entered", async () => {
-    render(<App />);
     const fromField = screen.getByLabelText("from");
     fireEvent.mouseDown(fromField);
     fireEvent.change(fromField, { target: { value: "Reading" } });
@@ -30,7 +51,6 @@ describe("App Component", () => {
   });
 
   it("should render the train info view when both the 'from' and 'to' fields are entered", async () => {
-    render(<App />);
     const fromField = screen.getByLabelText("from");
     fireEvent.mouseDown(fromField);
     fireEvent.change(fromField, { target: { value: "Reading" } });
@@ -44,7 +64,6 @@ describe("App Component", () => {
   });
 
   it("interchange station field is seen after pressing the 'plus' button", async () => {
-    render(<App />);
     const plusButton = screen.getByLabelText("Add a Change Station");
     fireEvent.click(plusButton);
     const interchange = await screen.findByLabelText("interchange");
@@ -52,7 +71,6 @@ describe("App Component", () => {
   });
 
   it("press the return button to reverse the direction", async () => {
-    render(<App />);
     const fromField = screen.getByLabelText("from");
     fireEvent.mouseDown(fromField);
     fireEvent.change(fromField, { target: { value: "Reading" } });
@@ -71,8 +89,6 @@ describe("App Component", () => {
   });
 
   it("can save a route to saved", async () => {
-    render(<App />);
-
     const savedRoutesButton = screen.queryByText("Saved Routes");
     expect(savedRoutesButton).toBeNull();
 
@@ -99,8 +115,6 @@ describe("App Component", () => {
   });
 
   it("can delete a saved route", async () => {
-    render(<App />);
-
     const fromField = screen.getByLabelText("from");
     fireEvent.mouseDown(fromField);
     fireEvent.change(fromField, {
@@ -123,5 +137,22 @@ describe("App Component", () => {
 
     const savedRoutesButton = screen.queryByText("Saved Routes");
     expect(savedRoutesButton).toBeNull();
+  });
+
+  it("can get the nearest station", async () => {
+    const getNearestStationButton = screen.getByLabelText(
+      "Find nearest station"
+    );
+    act(() => {
+      fireEvent.click(getNearestStationButton);
+    });
+
+    await waitFor(
+      () => {
+        const fromStation = screen.findByText("Thatcham (THA)");
+        expect(fromStation).toBeDefined();
+      },
+      { timeout: 10000, interval: 1000 }
+    );
   });
 });

@@ -1,0 +1,484 @@
+{
+  "nrccMessages": [
+    { "value": "This is a test notice message" },
+    {
+      "value": "Disruption between Effingham Junction and Guildford due to a safety inspection of the track. More details can be found in <a href=\"http://nationalrail.co.uk/service_disruptions/306701.aspx\">Latest Travel News</a>"
+    }
+  ],
+  "trainServices": [
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Theale",
+              "crs": "THE",
+              "st": "09:46",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Thatcham",
+              "crs": "THA",
+              "st": "09:54",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Newbury",
+              "crs": "NBY",
+              "st": "10:01",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "London Paddington",
+          "crs": "PAD",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Newbury",
+          "crs": "NBY",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "xNDnYBxP1XFBTkbR%2B%2Fzgtg%3D%3D",
+      "serviceIdGuid": "60e7d0c4-4f1c-71d5-414e-46d1fbfce0b6",
+      "serviceIdUrlSafe": "xNDnYBxP1XFBTkbR-_zgtg",
+      "sta": null,
+      "eta": null,
+      "std": "09:36",
+      "etd": "On time",
+      "platform": "7",
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": false,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": null,
+      "delayReason": null,
+      "serviceID": "xNDnYBxP1XFBTkbR+/zgtg==",
+      "adhocAlerts": null,
+      "destinationPlatform": "1"
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Reading West",
+              "crs": "RDW",
+              "st": "10:14",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Theale",
+              "crs": "THE",
+              "st": "10:19",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Aldermaston",
+              "crs": "AMT",
+              "st": "10:24",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Midgham",
+              "crs": "MDG",
+              "st": "10:27",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Thatcham",
+              "crs": "THA",
+              "st": "10:31",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Newbury Racecourse",
+              "crs": "NRC",
+              "st": "10:35",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Newbury",
+              "crs": "NBY",
+              "st": "10:38",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Reading",
+          "crs": "RDG",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Newbury",
+          "crs": "NBY",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "TDsuhmRYqHVlscFo7d9sig%3D%3D",
+      "serviceIdGuid": "862e3b4c-5864-75a8-65b1-c168eddf6c8a",
+      "serviceIdUrlSafe": "TDsuhmRYqHVlscFo7d9sig",
+      "sta": null,
+      "eta": null,
+      "std": "10:12",
+      "etd": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": false,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": null,
+      "delayReason": null,
+      "serviceID": "TDsuhmRYqHVlscFo7d9sig==",
+      "adhocAlerts": null,
+      "destinationPlatform": "1"
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Theale",
+              "crs": "THE",
+              "st": "10:46",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Thatcham",
+              "crs": "THA",
+              "st": "10:56",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Newbury",
+              "crs": "NBY",
+              "st": "11:02",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "London Paddington",
+          "crs": "PAD",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Newbury",
+          "crs": "NBY",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "I3c8dLVEC2zMs%2FHQzCoBfw%3D%3D",
+      "serviceIdGuid": "743c7723-44b5-6c0b-ccb3-f1d0cc2a017f",
+      "serviceIdUrlSafe": "I3c8dLVEC2zMs_HQzCoBfw",
+      "sta": null,
+      "eta": null,
+      "std": "10:39",
+      "etd": "On time",
+      "platform": "8B",
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": false,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": null,
+      "delayReason": null,
+      "serviceID": "I3c8dLVEC2zMs/HQzCoBfw==",
+      "adhocAlerts": null,
+      "destinationPlatform": "1"
+    },
+    {
+      "previousCallingPoints": null,
+      "subsequentCallingPoints": [
+        {
+          "callingPoint": [
+            {
+              "locationName": "Reading West",
+              "crs": "RDW",
+              "st": "11:14",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Theale",
+              "crs": "THE",
+              "st": "11:19",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Aldermaston",
+              "crs": "AMT",
+              "st": "11:24",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Midgham",
+              "crs": "MDG",
+              "st": "11:27",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Thatcham",
+              "crs": "THA",
+              "st": "11:31",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Newbury Racecourse",
+              "crs": "NRC",
+              "st": "11:35",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            },
+            {
+              "locationName": "Newbury",
+              "crs": "NBY",
+              "st": "11:38",
+              "et": "On time",
+              "at": null,
+              "isCancelled": false,
+              "length": 0,
+              "detachFront": false,
+              "formation": null,
+              "adhocAlerts": null
+            }
+          ],
+          "serviceType": 0,
+          "serviceChangeRequired": false,
+          "assocIsCancelled": false
+        }
+      ],
+      "formation": null,
+      "origin": [
+        {
+          "locationName": "Reading",
+          "crs": "RDG",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "destination": [
+        {
+          "locationName": "Newbury",
+          "crs": "NBY",
+          "via": null,
+          "futureChangeTo": null,
+          "assocIsCancelled": false
+        }
+      ],
+      "currentOrigins": null,
+      "currentDestinations": null,
+      "rsid": null,
+      "serviceIdPercentEncoded": "uo5gFaO7fKJoeOtoUnNZ5w%3D%3D",
+      "serviceIdGuid": "15608eba-bba3-a27c-6878-eb68527359e7",
+      "serviceIdUrlSafe": "uo5gFaO7fKJoeOtoUnNZ5w",
+      "sta": null,
+      "eta": null,
+      "std": "11:12",
+      "etd": "On time",
+      "platform": "7",
+      "operator": "Great Western Railway",
+      "operatorCode": "GW",
+      "isCircularRoute": false,
+      "isCancelled": false,
+      "filterLocationCancelled": false,
+      "serviceType": 0,
+      "length": 0,
+      "detachFront": false,
+      "isReverseFormation": false,
+      "cancelReason": null,
+      "delayReason": null,
+      "serviceID": "uo5gFaO7fKJoeOtoUnNZ5w==",
+      "adhocAlerts": null,
+      "destinationPlatform": "1"
+    }
+  ],
+  "busServices": null,
+  "ferryServices": null,
+  "generatedAt": "2022-09-26T08:35:29.6908375+00:00",
+  "locationName": "Reading",
+  "crs": "RDG",
+  "filterLocationName": "Thatcham",
+  "filtercrs": "THA",
+  "filterType": 0,
+  "platformAvailable": true,
+  "areServicesAvailable": true
+}

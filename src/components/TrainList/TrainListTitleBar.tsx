@@ -55,7 +55,7 @@ const TrainListTitleBar = () => {
           <Button
             clickHandler={toggleAlert}
             customStyle="bg-background-title"
-            ariaLabel="show ntoices"
+            ariaLabel="Show notices"
           >
             <ReportProblemIcon />
           </Button>

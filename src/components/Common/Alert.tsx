@@ -3,19 +3,19 @@ import ClearIcon from "@mui/icons-material/Clear";
 
 import Button from "./Button";
 
-type PropsType = {
+interface TAlert {
   message: string;
   showAlert: boolean;
   setShowAlert: React.Dispatch<React.SetStateAction<boolean>>;
   type?: "Error" | "Notice";
-};
+}
 
 const Alert = ({
   message,
   showAlert,
   setShowAlert,
   type = "Error",
-}: PropsType) => {
+}: TAlert) => {
   useEffect(() => {
     let timeOutId: ReturnType<typeof setTimeout>;
     if (type === "Error") {

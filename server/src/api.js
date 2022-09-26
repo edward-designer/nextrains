@@ -1,15 +1,10 @@
 const express = require("express");
 const serverless = require("serverless-http");
-
 const axios = require("axios");
 
 const app = express();
 
 app.use(express.json());
-
-app.get("/.netlify/functions/api/test", (request, response) => {
-  return response.send("hello");
-});
 
 app.get(
   "/.netlify/functions/api/:from/to/:to/:timeOffset",
@@ -19,12 +14,13 @@ app.get(
     const to = request.params.to === "NIL" ? "" : `/to/${request.params.to}`;
     const URL1 = `https://huxley2.azurewebsites.net/departures/${request.params.from}${to}/20?expand=true&timeOffset=${timeOffset}&timeWindow=120`;
     const URL2 = `https://huxley2.azurewebsites.net/arrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=${timeOffset2}&timeWindow=120`;
-
+    // get departure info from departing station
     axios
       .get(URL1)
       .then((response) => response.data)
       .then((data) => {
         if (request.params.to !== "NIL") {
+          // get arrival info from destination station
           axios
             .get(URL2)
             .then((response2) => response2.data)
@@ -44,17 +40,15 @@ app.get(
                       ) &&
                         train.etd !== "On time")
                   )?.platform || "";
-                const alteredTrain = {
+                return {
                   ...train,
                   destinationPlatform: dPlatform,
                 };
-                return alteredTrain;
               });
-              const dataWithDestinationPlatform = {
+              response.json({
                 ...data,
                 trainServices,
-              };
-              response.json(dataWithDestinationPlatform);
+              });
             });
         } else {
           response.json(data);
@@ -63,7 +57,7 @@ app.get(
       .catch((err) => {
         console.error(err);
         response
-          .status(400)
+          .status(500)
           .send(
             "Cannot get train information at the moment. Please try again later."
           );

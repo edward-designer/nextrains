@@ -10,18 +10,19 @@ type TCellTime = {
   status: TrainStatus;
 };
 
-const CellTime = ({
-  std,
-  arrivalTime,
-  arrivalTimeDestination,
-  arrivalTimeFinalDestination,
-  status,
-}: TCellTime) => {
-  if (status === TrainStatus.cancelled) arrivalTime = "Cancelled";
-  if (status === TrainStatus.delayed) arrivalTime = "Delayed";
-  return (
-    <div
-      className={`basis-2/12 flex flex-row items-center font-medium leading-4 pl-1 gap-2 
+const CellTime = React.memo(
+  ({
+    std,
+    arrivalTime,
+    arrivalTimeDestination,
+    arrivalTimeFinalDestination,
+    status,
+  }: TCellTime) => {
+    if (status === TrainStatus.cancelled) arrivalTime = "Cancelled";
+    if (status === TrainStatus.delayed) arrivalTime = "Delayed";
+    return (
+      <div
+        className={`basis-2/12 flex flex-row items-center font-medium leading-4 pl-1 gap-2 
       ${
         status !== TrainStatus.ontime && status !== TrainStatus.departed
           ? "text-text-highlight"
@@ -33,39 +34,40 @@ const CellTime = ({
          : ""
      }
         `}
-    >
-      <div className="flex flex-col flex-1">
-        <div className="mt-1">
-          {arrivalTime !== std && (
-            <div className="line-through text-[10px]">
-              <span>{std}</span>
-            </div>
-          )}
-          <span>{arrivalTime}</span>
-        </div>
+      >
+        <div className="flex flex-col flex-1">
+          <div className="mt-1">
+            {arrivalTime !== std && (
+              <div className="line-through text-[10px]">
+                <span>{std}</span>
+              </div>
+            )}
+            <span>{arrivalTime}</span>
+          </div>
 
-        {arrivalTimeDestination &&
-          !(
-            status === TrainStatus.delayed || status === TrainStatus.cancelled
-          ) && (
-            <>
-              <span
-                className={`text-[10px] block text-right leading-tight text-text-tertiary`}
-              >
-                {`→ ${arrivalTimeDestination}`}
-              </span>
-              {arrivalTimeFinalDestination && (
+          {arrivalTimeDestination &&
+            !(
+              status === TrainStatus.delayed || status === TrainStatus.cancelled
+            ) && (
+              <>
                 <span
-                  className={`text-[10px] block text-right leading-3 text-text-primary font-bold`}
+                  className={`text-[10px] block text-right leading-tight text-text-tertiary`}
                 >
-                  → {arrivalTimeFinalDestination}
+                  {`→ ${arrivalTimeDestination}`}
                 </span>
-              )}
-            </>
-          )}
+                {arrivalTimeFinalDestination && (
+                  <span
+                    className={`text-[10px] block text-right leading-3 text-text-primary font-bold`}
+                  >
+                    → {arrivalTimeFinalDestination}
+                  </span>
+                )}
+              </>
+            )}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
 
 export default CellTime;

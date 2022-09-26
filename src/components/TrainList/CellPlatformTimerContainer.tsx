@@ -1,3 +1,5 @@
+import React from "react";
+
 import CellPlatform from "./CellPlatform";
 import CellCountDown from "./CellCountDown";
 import CellChangeTimer from "./CellChangeTimer";

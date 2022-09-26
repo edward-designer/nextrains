@@ -18,7 +18,6 @@ const CellDestination = ({
   endStation,
   subsequentCallingPoints,
   fromTo,
-  status,
   finalDestination,
   destinationPlatform,
   isSelected,

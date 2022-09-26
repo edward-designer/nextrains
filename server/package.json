@@ -4,8 +4,9 @@
   "description": "",
   "main": "api.js",
   "scripts": {
-    "start": "./node_modules/.bin/netlify-lambda serve src",
-    "build": "./node_modules/.bin/netlify-lambda build src"
+    "start": "NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src",
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +18,8 @@
     "serverless-http": "^3.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.8.3"
   }
 }

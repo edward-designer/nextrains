@@ -21,8 +21,8 @@ interface TFromStationField {
 }
 
 interface TLonLat {
-  lon: number | null;
-  lat: number | null;
+  lon: number;
+  lat: number;
 }
 
 const FromStationField = ({
@@ -32,10 +32,7 @@ const FromStationField = ({
 }: TFromStationField) => {
   const { setStations } = useContext(ControlContext);
   const [stationsList] = useTrainStationsList();
-  const [currentLonLat, setcurrentLonLat] = useState<TLonLat>({
-    lon: null,
-    lat: null,
-  });
+  const [currentLonLat, setcurrentLonLat] = useState<TLonLat | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
   const errorCallback = (error: GeolocationPositionError) => {
@@ -84,7 +81,7 @@ const FromStationField = ({
   };
 
   useEffect(() => {
-    if (currentLonLat.lon !== null && currentLonLat.lat !== null) {
+    if (currentLonLat !== null) {
       const nearestStationData = getNearestStation(
         currentLonLat.lat,
         currentLonLat.lon,
@@ -98,6 +95,7 @@ const FromStationField = ({
       setLoading(false);
     }
   }, [currentLonLat, setStations, stationsList]);
+
   return (
     <StationInput
       label={label}
@@ -110,14 +108,16 @@ const FromStationField = ({
       }
     >
       {loading && <Loading />}
-      <Button
-        clickHandler={setNearestHandler}
-        ariaLabel="Find nearest station"
-        customStyle="text-text-tertiary"
-        label="Nearest Station"
-      >
-        <MyLocationIcon />
-      </Button>
+      {!currentLonLat && (
+        <Button
+          clickHandler={setNearestHandler}
+          ariaLabel="Find nearest station"
+          customStyle="text-text-tertiary"
+          label="Nearest Station"
+        >
+          <MyLocationIcon />
+        </Button>
+      )}
     </StationInput>
   );
 };

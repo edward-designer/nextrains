@@ -16,15 +16,6 @@ const Alert = ({
   setShowAlert,
   type = "Error",
 }: TAlert) => {
-  useEffect(() => {
-    let timeOutId: ReturnType<typeof setTimeout>;
-    if (type === "Error") {
-      timeOutId = setTimeout(() => setShowAlert(false), 10000);
-      return () => clearTimeout(timeOutId);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   if (!message || !showAlert) return null;
 
   return (

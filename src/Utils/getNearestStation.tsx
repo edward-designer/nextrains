@@ -6,8 +6,8 @@ const findDistanceBetweenLatLonInKM = (
   lat2: number,
   lon2: number
 ): number => {
-  // That would be too far away from our use case i.e. > 55 km
-  if (Math.abs(lat1 - lat2) > 0.5 || Math.abs(lon1 - lon2) > 0.5) {
+  // That would be too far away from our use case i.e. > 110 km
+  if (Math.abs(lat1 - lat2) > 1 || Math.abs(lon1 - lon2) > 1) {
     return Infinity;
   }
   const R = 6371;

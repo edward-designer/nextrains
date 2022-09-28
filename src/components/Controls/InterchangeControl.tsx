@@ -44,7 +44,7 @@ const InterchangeControl = ({ setStationsHandler }: TInterchangeControl) => {
           }
         >
           <Button
-            customStyle="place-self-center -ml-3 bg-text-inactive hover:bg-button-color scale-[80%]"
+            customStyle="place-self-center bg-text-inactive hover:bg-button-color scale-[80%]"
             clickHandler={removeHandler(ind + 1)}
             ariaLabel="Remove this change station"
           >

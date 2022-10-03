@@ -3,6 +3,9 @@ import React from "react";
 import Loading from "../Common/Loading";
 import TrainRowContainer from "./TrainRowContainer";
 
+import ManageSearchIcon from "@mui/icons-material/ManageSearch";
+import RailwayAlertTwoToneIcon from "@mui/icons-material/RailwayAlertTwoTone";
+
 interface TTrainListContainerView {
   trainList: TParsedTrainInfo[];
   fromTo: TFromTo;
@@ -20,17 +23,34 @@ const TrainListContainerView = ({
   if (!fromTo.from)
     // NO from station is entered
     return (
-      <div className="p-4 text-text-inactive text-xs">
-        Please begin by entering the departure station in the 'from' field.
+      <div className="bg-background-form p-20 text-text-inactive text-xs flex items-center justify-center flex-col">
+        <ManageSearchIcon
+          sx={{
+            fontSize: "8em",
+            display: "block",
+            color: "var(--background-title)",
+          }}
+        />
+        <div>
+          Please begin by entering the departure station in the 'from' field.
+        </div>
       </div>
     );
 
   // NO data return
   if (!trainList)
     return (
-      <div className="p-4 text-text-inactive text-xs">
-        Sorry, currently no direct trains between the two stations are found.
-        Please check back later.
+      <div className="bg-background-form p-20 text-text-inactive text-xs flex items-center justify-center flex-col">
+        <RailwayAlertTwoToneIcon
+          sx={{
+            fontSize: "8em",
+            display: "block",
+            color: "var(--background-title)",
+          }}
+        />
+        <div>
+          Sorry, currently no direct trains are found. Please check back later.
+        </div>
       </div>
     );
 

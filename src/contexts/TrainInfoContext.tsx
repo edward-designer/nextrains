@@ -12,6 +12,7 @@ interface TTrainInfoContext {
   notice: { value: string }[];
   loading: boolean;
   refetch: (time: string | null) => void;
+  fetchPreviousTrains: () => void;
 }
 
 export const TrainInfoContext = createContext<TTrainInfoContext>({
@@ -24,6 +25,7 @@ export const TrainInfoContext = createContext<TTrainInfoContext>({
   notice: [],
   loading: false,
   refetch: (time) => {},
+  fetchPreviousTrains: () => {},
 });
 
 interface TTrainInfoContextWrapper {
@@ -40,11 +42,8 @@ const TrainInfoContextWrapper = ({
   finalDestination = "",
   children,
 }: TTrainInfoContextWrapper) => {
-  const { response, error, notice, loading, refetch } = useTrainInfo(
-    fromTo,
-    earliestTimeForConnectingTrain,
-    finalDestination
-  );
+  const { response, error, notice, loading, refetch, fetchPreviousTrains } =
+    useTrainInfo(fromTo, earliestTimeForConnectingTrain, finalDestination);
 
   const value = {
     fromTo,
@@ -56,6 +55,7 @@ const TrainInfoContextWrapper = ({
     notice,
     loading,
     refetch,
+    fetchPreviousTrains,
   };
   return (
     <TrainInfoContext.Provider value={value}>

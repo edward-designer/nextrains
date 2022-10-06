@@ -58,7 +58,7 @@ export const currentDayofWeek = () => new Date().getDay();
 
 export const isNextDay = (time: string) => {
   const [hour] = time.split(":");
-  return Number(new Date().getHours()) > parseInt(hour);
+  return Number(new Date().getHours()) > parseInt(hour) + 12;
 };
 
 export const isTime1LaterThanTime2 = (
@@ -116,8 +116,9 @@ export const minutesDifferenceNumber = (
   const changeTime = Math.floor(
     (date2.valueOf() - date1.valueOf()) / (1000 * 60)
   );
-  const returnedChangeTime = changeTime >= 0 ? changeTime : 0;
-  return returnedChangeTime;
+  /*const returnedChangeTime = changeTime >= 0 ? changeTime : 0;
+  return returnedChangeTime;*/
+  return changeTime;
 };
 
 export const minutesFromNow = (time: string): number => {
@@ -141,6 +142,21 @@ export const checkPeakHours = (fromStation: string | null): boolean => {
           time <= "19:00" &&
           londonStations.includes(fromStation))
     : false;
+};
+
+export const timeMinusMinutes = (
+  time: string | null,
+  minsToMinus: number
+): string => {
+  const date = new Date();
+  if (time) {
+    const [hour, minute] = time.split(":");
+    date.setHours(parseInt(hour));
+    date.setMinutes(parseInt(minute) - minsToMinus);
+  } else {
+    date.setMinutes(date.getMinutes() - minsToMinus);
+  }
+  return `${date.getHours()}:${date.getMinutes()}`;
 };
 
 export const checkParams = (param: string | undefined) => {

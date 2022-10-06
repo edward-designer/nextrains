@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import Button from "../Common/Button";
 import PeakNotice from "../Notice/PeakNotice";
 import Alert from "../Common/Alert";
+import AlreadyOnTrainControl from "./AlreadyOnTrainControl";
 
 import { SelectedTrainContext } from "../../contexts/SelectedTrainContext";
 import { TrainInfoContext } from "../../contexts/TrainInfoContext";
@@ -14,7 +15,7 @@ import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 const TrainListTitleBar = () => {
   const [showAlert, setShowAlert] = useState<boolean>(false);
 
-  const SelectedTrains = useContext(SelectedTrainContext);
+  const { selectedTrains, onTrain } = useContext(SelectedTrainContext);
   const {
     fromTo,
     leg,
@@ -25,7 +26,8 @@ const TrainListTitleBar = () => {
     refetch,
   } = useContext(TrainInfoContext);
 
-  const trainSelected = SelectedTrains.selectedTrains.has(leg);
+  const trainSelected = selectedTrains.has(leg);
+  const onTrainSelected = onTrain.has(leg);
 
   const toggleAlert = () => {
     setShowAlert((showAlert) => !showAlert);
@@ -51,20 +53,25 @@ const TrainListTitleBar = () => {
           <TrainIcon />
           {` ${fromTo.from} → ${fromTo.to}`}
         </h2>
+
+        <AlreadyOnTrainControl />
+
         {notice?.length !== 0 && (
           <Button
             clickHandler={toggleAlert}
             customStyle="bg-background-title"
             ariaLabel="Show notices"
+            label="Notices"
           >
             <ReportProblemIcon />
           </Button>
         )}
-        {!trainSelected && (
+        {!trainSelected && !onTrainSelected && (
           <Button
             clickHandler={refetchHandler(earliestTimeForConnectingTrain)}
             customStyle={` ${loading ? "opacity-30" : "bg-background-title"}`}
             ariaLabel="update train data"
+            label="Refresh"
           >
             <SyncIcon />
           </Button>

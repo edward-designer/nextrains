@@ -46,7 +46,7 @@ const parseTrainInfo = (
     formation,
     destinationPlatform,
   } = train;
-  
+
   const arrivalTime =
     etd === "Cancelled" || etd === "Delayed"
       ? null
@@ -62,7 +62,8 @@ const parseTrainInfo = (
   const callingPoint = Array.isArray(subsequentCallingPoints)
     ? subsequentCallingPoints[0].callingPoint
     : [];
-  if (callingPoint.length !== 0) {
+  // Add back the starting station
+  if (callingPoint.length !== 0 && callingPoint.at(-1)?.locationName !== from) {
     callingPoint.unshift({
       locationName: from || "",
       crs: "FROM",

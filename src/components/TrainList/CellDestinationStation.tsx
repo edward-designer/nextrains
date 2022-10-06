@@ -79,7 +79,9 @@ const CellDestinationStationTypes = ({
       ></span>
       <span className="block">
         {`${station.locationName} ${
-          station?.et !== "On time" ? `(${station.et})` : `(${station.st})`
+          station?.et !== "On time" && station?.et !== null
+            ? `(${station.et})`
+            : `(${station.st})`
         }`}
       </span>
       {platformInfo}

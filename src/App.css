@@ -13,7 +13,7 @@
   --reverse-color: rgb(255, 255, 255);
   --background-main: rgb(255, 255, 255);
   --background-form: rgb(241, 245, 249);
-  --background-title: rgb(180, 193, 209);
+  --background-title: rgb(134, 150, 167);
   --background-countdown: rgba(147, 197, 253, 0.8);
   --background-notice: rgba(219, 234, 254);
   --text-inactive: rgb(148, 163, 184);
@@ -44,7 +44,7 @@
   --reverse-color: rgb(143, 165, 174);
   --background-main: rgb(19, 23, 29);
   --background-form: rgb(40, 49, 61);
-  --background-title: rgb(70, 83, 100);
+  --background-title: rgb(60, 73, 91);
   --background-countdown: rgba(12, 54, 103, 0.8);
   --background-notice: rgb(50, 76, 108);
   --text-inactive: rgb(98, 104, 133);

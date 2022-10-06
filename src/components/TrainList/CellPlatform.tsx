@@ -1,6 +1,7 @@
 import React from "react";
 
 import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
+import RailwayAlertIcon from "@mui/icons-material/RailwayAlert";
 
 import { TrainStatus } from "../../types/customTypes";
 
@@ -45,6 +46,8 @@ const CellPlatform = React.memo(
               {toPlatform || platform}
             </span>
           </>
+        ) : status === TrainStatus.departed ? (
+          <RailwayAlertIcon />
         ) : (
           <HourglassEmptyIcon />
         )}

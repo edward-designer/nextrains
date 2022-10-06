@@ -96,12 +96,48 @@ const useTrainInfo = (
     [fetchTrainInfo]
   );
 
+  const fetchPreviousTrains = useCallback(() => {
+    if (from !== "") {
+      setLoading(true);
+      const apiTo = to ? `${to}` : "NIL";
+      const http = import.meta.env.DEV
+        ? "http://localhost:3001"
+        : "https://nextrains.netlify.app/.netlify/functions";
+      const trainApi = `${http}/api/${from}/to/${apiTo}/arrivals`;
+      axios
+        .get(trainApi)
+        .then((response) => {
+          const notice = response.data.nrccMessages;
+          if (notice) setNotice(notice);
+
+          let trainServices = response.data.trainServices;
+
+          trainServices = trainServices?.map((train: TTrainInfo) => {
+            const formattedTrainInfo = parseTrainInfo(
+              train,
+              to,
+              response.data.locationName,
+              destination
+            );
+            return { ...formattedTrainInfo };
+          });
+          setResponse(trainServices);
+        })
+        .catch((e) => {
+          setError(e.message);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
+  }, []);
+
   useEffect(() => {
     fetchTrainInfo();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [from, to]);
 
-  return { response, error, notice, loading, refetch };
+  return { response, error, notice, loading, refetch, fetchPreviousTrains };
 };
 
 export default useTrainInfo;

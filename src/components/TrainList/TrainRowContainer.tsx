@@ -67,7 +67,7 @@ const TrainRowContainer = ({
     arrivalTime && isConnecting ? minutesDifference(toTime, arrivalTime) : null;
 
   const toggleTrainSelect = () => {
-    if (status !== TrainStatus.cancelled && status !== TrainStatus.departed) {
+    if (status !== TrainStatus.cancelled) {
       if (isSelected) {
         const tempSelectedTrains = new Map(selectedTrains);
         tempSelectedTrains.delete(leg);

@@ -38,7 +38,7 @@ const TrainListContainerView = ({
     );
 
   // NO data return
-  if (!trainList)
+  if (!trainList || trainList.length === 0)
     return (
       <div className="bg-background-form p-20 text-text-inactive text-xs flex items-center justify-center flex-col">
         <RailwayAlertTwoToneIcon
@@ -48,9 +48,7 @@ const TrainListContainerView = ({
             color: "var(--background-title)",
           }}
         />
-        <div>
-          Sorry, currently no direct trains are found. Please check back later.
-        </div>
+        <div>Sorry, no trains are found. Please check back later.</div>
       </div>
     );
 

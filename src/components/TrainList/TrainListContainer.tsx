@@ -17,17 +17,17 @@ const TrainListContainer = () => {
     loading,
     refetch,
   } = useContext(TrainInfoContext);
-  const selected = useContext(SelectedTrainContext);
-  const currentLegSelectedTrain = selected.selectedTrains.has(leg)
-    ? selected.selectedTrains.get(leg)
+  const { selectedTrains, onTrain } = useContext(SelectedTrainContext);
+  const currentLegSelectedTrain = selectedTrains.has(leg)
+    ? selectedTrains.get(leg)
     : null;
   const fromTime = currentLegSelectedTrain?.arrivalTime || null;
-
+  const onTrainSelected = onTrain.has(leg);
   // refresh when tab becomes active/visible
   useEffect(() => {
     const document = window.document;
     const reloadWhenActive = () => {
-      if (!document.hidden && !currentLegSelectedTrain) {
+      if (!document.hidden && !currentLegSelectedTrain && !onTrainSelected) {
         refetch(earliestTimeForConnectingTrain);
       }
     };
@@ -45,7 +45,9 @@ const TrainListContainer = () => {
         !(
           currentLegSelectedTrain &&
           isTime1LaterThanTime2(currentTime(), fromTime)
-        ) && refetch(earliestTimeForConnectingTrain),
+        ) &&
+        !onTrainSelected &&
+        refetch(earliestTimeForConnectingTrain),
       60000
     );
     return () => window.clearInterval(timer);

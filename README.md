@@ -14,6 +14,8 @@ I find catching and changing trains in UK is quite a daunting task as trains are
   - destination alighting platform number
   - a tag to indicate the fastest train to arrival at destination
   - auto refresh the train info every 60 seconds and when the tab (inactive) becomes active again
+- **[NEW] Get info of the train you are currently taking**
+  - even if you have already got on a train, you can still find it by pressing the "previous trains" button
 - **Optionally add up to 4 exchange stations**
   - by selecting a train in the first leg, the connecting trains will be shown with the available time for changing trains
   - direct trains between the from station to the final destination is highlighted with a tag

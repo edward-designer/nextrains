@@ -6,16 +6,71 @@ const app = express();
 
 app.use(express.json());
 
+const currentTime = () => {
+  return new Date().toLocaleTimeString("en-GB", {
+    timeZone: "Europe/London",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+};
+
+const isTime1LaterThanTime2 = (time1, time2) => {
+  if (time1 === null || time2 === null) return;
+  if (!(isTimeFormat(time1) && isTimeFormat(time2))) return;
+  const [hour1] = time1.split(":");
+  const [hour2] = time2.split(":");
+  if (parseInt(hour1) - parseInt(hour2) > 12) {
+    return false;
+  } else if (parseInt(hour2) - parseInt(hour1) > 12) {
+    return true;
+  }
+  return time1 > time2;
+};
+
+const isTimeFormat = (time) => {
+  if (time === null) return false;
+  return /^\d{2}:\d{2}$/.test(time);
+};
+
 app.get(
   "/.netlify/functions/api/:from/to/:to/:timeOffset",
   (request, response) => {
     const timeOffset = request.params.timeOffset || 0;
     if (timeOffset === "arrivals") {
-      const URL = `https://huxley2.azurewebsites.net/arrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=0&timeWindow=120`;
+      const URL = `https://huxley2.azurewebsites.net/arrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=0&timeWindow=60`;
       axios
         .get(URL)
-        .then((response) => response.data)
-        .then((data) => response.json(data))
+        .then((response) => response.json())
+        .then((data) => {
+          let trainServices = data.trainServices.map((train) => {
+            const destinationPlatform = train.platform;
+            const platform = null;
+            const subsequentCallingPoints = train.previousCallingPoints;
+            subsequentCallingPoints[0].callingPoint.push({
+              locationName: data.locationName,
+              crs: data.crs,
+              st: train.sta,
+              et: train.eta,
+            });
+            const std =
+              train.previousCallingPoints.length > 0
+                ? train.previousCallingPoints[0].callingPoint.filter(
+                    (station) => station.crs === request.params.from
+                  )[0].st
+                : "";
+            return {
+              ...train,
+              destinationPlatform,
+              platform,
+              subsequentCallingPoints,
+              std,
+            };
+          });
+          trainServices = trainServices.filter((train) =>
+            isTime1LaterThanTime2(currentTime(), train.std)
+          );
+          response.json({ ...data, trainServices });
+        })
         .catch((err) => {
           console.error(err);
           response

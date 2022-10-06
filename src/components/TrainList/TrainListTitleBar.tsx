@@ -54,7 +54,7 @@ const TrainListTitleBar = () => {
           {` ${fromTo.from} → ${fromTo.to}`}
         </h2>
 
-        <AlreadyOnTrainControl />
+        {fromTo.to && <AlreadyOnTrainControl />}
 
         {notice?.length !== 0 && (
           <Button

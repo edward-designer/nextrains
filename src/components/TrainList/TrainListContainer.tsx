@@ -35,7 +35,11 @@ const TrainListContainer = () => {
     return () =>
       document.removeEventListener("visibilitychange", reloadWhenActive);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentLegSelectedTrain, earliestTimeForConnectingTrain]);
+  }, [
+    currentLegSelectedTrain,
+    earliestTimeForConnectingTrain,
+    onTrainSelected,
+  ]);
 
   // auto refresh every 60 seconds
   useEffect(() => {

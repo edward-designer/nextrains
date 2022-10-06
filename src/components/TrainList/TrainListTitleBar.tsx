@@ -54,8 +54,6 @@ const TrainListTitleBar = () => {
           {` ${fromTo.from} → ${fromTo.to}`}
         </h2>
 
-        {fromTo.to && <AlreadyOnTrainControl />}
-
         {notice?.length !== 0 && (
           <Button
             clickHandler={toggleAlert}
@@ -76,6 +74,7 @@ const TrainListTitleBar = () => {
             <SyncIcon />
           </Button>
         )}
+        {fromTo.to && !trainSelected && <AlreadyOnTrainControl />}
       </div>
       <Alert
         message={error}

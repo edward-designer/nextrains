@@ -31,7 +31,7 @@ const TrainListContainerView = ({
             color: "var(--background-title)",
           }}
         />
-        <div>
+        <div className="text-center">
           Please begin by entering the departure station in the 'from' field.
         </div>
       </div>
@@ -48,7 +48,11 @@ const TrainListContainerView = ({
             color: "var(--background-title)",
           }}
         />
-        <div>Sorry, no trains are found. Please check back later.</div>
+        <div className="text-center">
+          Sorry, no trains are found.
+          <br />
+          Please add an interchange station or check back later.
+        </div>
       </div>
     );
 

@@ -43,7 +43,7 @@ const AlreadyOnTrainControl = () => {
       ) : (
         <Button
           ariaLabel="Click to retrieve departed train info"
-          label="Previous Trains"
+          label="Earlier Trains"
           clickHandler={clickHandler}
           customStyle="bg-background-title"
         >

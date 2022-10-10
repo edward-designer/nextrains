@@ -37,15 +37,16 @@ app.get(
   (request, response) => {
     const timeOffset = request.params.timeOffset || 0;
     if (timeOffset === "arrivals") {
-      const URL = `https://huxley2.azurewebsites.net/arrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=0&timeWindow=60`;
-      axios
-        .get(URL)
-        .then((response) => response.data)
+      const URL = `https://huxley2.azurewebsites.net/arrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=0&timeWindow=120`;
+      fetch(URL)
+        .then((response) => response.json())
         .then((data) => {
           let trainServices = data.trainServices.map((train) => {
             const destinationPlatform = train.platform;
             const platform = null;
-            const subsequentCallingPoints = train.previousCallingPoints;
+            const subsequentCallingPoints = train.previousCallingPoints ?? [
+              { callingPoint: [] },
+            ];
             subsequentCallingPoints[0].callingPoint.push({
               locationName: data.locationName,
               crs: data.crs,
@@ -53,7 +54,7 @@ app.get(
               et: train.eta,
             });
             const std =
-              train.previousCallingPoints.length > 0
+              train.previousCallingPoints?.length > 0
                 ? train.previousCallingPoints[0].callingPoint.filter(
                     (station) => station.crs === request.params.from
                   )[0].st
@@ -69,6 +70,13 @@ app.get(
           trainServices = trainServices.filter((train) =>
             isTime1LaterThanTime2(currentTime(), train.std)
           );
+          trainServices.sort((a, b) => {
+            if (isTime1LaterThanTime2(a.std, b.std)) {
+              return 1;
+            } else {
+              return -1;
+            }
+          });
           response.json({ ...data, trainServices });
         })
         .catch((err) => {

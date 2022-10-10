@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import { SelectedTrainContext } from "../../contexts/SelectedTrainContext";
 import TrainInfoContextWrapper from "../../contexts/TrainInfoContext";
@@ -14,12 +14,20 @@ type TJourney = {
 };
 
 const Journey = ({ leg, fromTo, finalDestination }: TJourney) => {
-  const selected = useContext(SelectedTrainContext);
-  const previousLegSelectedTrain = selected.selectedTrains.has(leg - 1)
-    ? selected.selectedTrains.get(leg - 1)
+  const { selectedTrains, setSelectedTrains, onTrain, setOnTrain } =
+    useContext(SelectedTrainContext);
+  const previousLegSelectedTrain = selectedTrains.has(leg - 1)
+    ? selectedTrains.get(leg - 1)
     : null;
   const earliestTimeForConnectingTrain =
     previousLegSelectedTrain?.toStationArrivalTime || null;
+
+  useEffect(() => {
+    const resetSelectedTrains = new Map();
+    const resetOnTrain = new Map();
+    setSelectedTrains(resetSelectedTrains);
+    setOnTrain(resetOnTrain);
+  }, []);
 
   return (
     <ErrorBoundary>

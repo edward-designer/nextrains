@@ -59,10 +59,11 @@ const TrainListContainer = () => {
   }, [earliestTimeForConnectingTrain, fromTime]);
 
   // refresh if previousLegSelectedTrain is changed
-  useEffect(
-    () => refetch(earliestTimeForConnectingTrain),
-    [earliestTimeForConnectingTrain, refetch]
-  );
+  useEffect(() => {
+    if (!onTrainSelected) {
+      refetch(earliestTimeForConnectingTrain);
+    }
+  }, [earliestTimeForConnectingTrain, onTrainSelected, refetch]);
 
   return (
     <TrainListContainerView

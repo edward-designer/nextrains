@@ -38,7 +38,8 @@ app.get(
     const timeOffset = request.params.timeOffset || 0;
     if (timeOffset === "arrivals") {
       const URL = `https://huxley2.azurewebsites.net/arrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=0&timeWindow=120`;
-      fetch(URL)
+      axios
+        .get(URL)
         .then((response) => response.json())
         .then((data) => {
           let trainServices = data.trainServices.map((train) => {

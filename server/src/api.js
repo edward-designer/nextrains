@@ -40,7 +40,7 @@ app.get(
       const URL = `https://huxley2.azurewebsites.net/arrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=0&timeWindow=120`;
       axios
         .get(URL)
-        .then((response) => response.json())
+        .then((response) => response.data)
         .then((data) => {
           let trainServices = data.trainServices.map((train) => {
             const destinationPlatform = train.platform;

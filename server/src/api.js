@@ -37,7 +37,7 @@ app.get(
   (request, response) => {
     const timeOffset = request.params.timeOffset || 0;
     if (timeOffset === "arrivals") {
-      const URL = `https://huxley2.azurewebsites.net/arrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=0&timeWindow=120`;
+      const URL = `https://huxley2.azurewebsites.net/staffarrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=0&timeWindow=120`;
       axios
         .get(URL)
         .then((response) => response.data)
@@ -91,8 +91,8 @@ app.get(
     } else {
       const timeOffset2 = Number(timeOffset) + 15;
       const to = request.params.to === "NIL" ? "" : `/to/${request.params.to}`;
-      const URL1 = `https://huxley2.azurewebsites.net/departures/${request.params.from}${to}/20?expand=true&timeOffset=${timeOffset}&timeWindow=120`;
-      const URL2 = `https://huxley2.azurewebsites.net/arrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=${timeOffset2}&timeWindow=120`;
+      const URL1 = `https://huxley2.azurewebsites.net/staffdepartures/${request.params.from}${to}/20?expand=true&timeOffset=${timeOffset}&timeWindow=120`;
+      const URL2 = `https://huxley2.azurewebsites.net/staffarrivals/${request.params.to}/from/${request.params.from}/20?expand=true&timeOffset=${timeOffset2}&timeWindow=120`;
       // get departure info from departing station
       axios
         .get(URL1)

@@ -71,13 +71,13 @@ const TrainRowContainer = ({
       if (isSelected) {
         const tempSelectedTrains = new Map(selectedTrains);
         tempSelectedTrains.delete(leg);
+        for (let i = 1; i < 4; i++) {
+          tempSelectedTrains.delete(leg + i);
+        }
         setSelectedTrains(tempSelectedTrains);
       } else {
         const tempSelectedTrains = new Map(selectedTrains);
         tempSelectedTrains.set(leg, trainDetails);
-        for (let i = 1; i < 4; i++) {
-          tempSelectedTrains.delete(leg + i);
-        }
         setSelectedTrains(tempSelectedTrains);
       }
     }

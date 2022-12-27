@@ -1,5 +1,7 @@
 [build]
 functions = "functions"
+ignore = 1
+
 
 [[redirects]]
   from = "/*"

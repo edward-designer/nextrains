@@ -45,6 +45,7 @@ This is a complete rewrite of the previous version[https://github.com/edward-des
 ## Todo
 
 - ~~Suggest nearest stations through Geolocation API~~
+- Replace the use of custom hook with React Query.
 
 ## Tech Stacks
 
@@ -76,3 +77,4 @@ A simple node server is created to retrieve information from the source API by s
 
 - UK trains real-time arrival and departure info is provided by [National Rail Enquiries](https://www.nationalrail.co.uk/100296.aspx)
 - UK train station data is provided by uk-railway-stations and Trainline EU and original sources.
+- [Huxley](https://huxley2.azurewebsites.net/) for converting the original GB NRE LDB WCF SOAP XML API as JSON REST proxy service.
